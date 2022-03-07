@@ -1,15 +1,14 @@
-import * as usersService from '../../utilities/users-service'
+import * as userService from "../../utilities/users-service";
 
-export default function OrderHistory() {
-    async function handleCheckToken() {
-      const expDate = await usersService.checkToken();
-      console.log(expDate)
+export default function OrderHistoryPage() {
+  const handleCheckToken = async (evt) => {
+    const expDate = await userService.checkToken();
+  };
 
-    }
-    return (
+  return (
     <>
-        <h1>OrderHistoryPage</h1>
-        <button onClick={() => handleCheckToken()}>Check When My</button>
+      <h1>Order History Page</h1>
+      <button onClick={handleCheckToken}>Check Token Time</button>
     </>
-    )
+  );
 }
